@@ -1,0 +1,63 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+### Get all orders
+GET https://localhost:7102/api/orders
+Accept: application/json
+
+### Get a single order by ID
+GET https://localhost:7102/api/orders/1
+Accept: application/json
+
+### Create a new order
+POST https://localhost:7102/api/orders
+Content-Type: application/json
+
+{
+  "customerId": 1,
+  "orderDate": "2024-08-01T10:00:00",
+  "shippingAddress": "123 Main St, Anytown, USA",
+  "totalAmount": 149.99,
+  "items": [
+    {
+      "productId": 1,
+      "productName": "Laptop",
+      "quantity": 1,
+      "unitPrice": 999.99
+    },
+    {
+      "productId": 2,
+      "productName": "Mouse",
+      "quantity": 1,
+      "unitPrice": 49.99
+    }
+  ]
+}
+
+### Update an existing order
+PUT https://localhost:7102/api/orders/1
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "customerId": 1,
+  "orderDate": "2024-08-01T10:00:00",
+  "shippedDate": "2024-08-02T12:00:00",
+  "shippingAddress": "123 Main St, Anytown, USA",
+  "totalAmount": 149.99,
+  "items": [
+    {
+      "productId": 1,
+      "productName": "Laptop",
+      "quantity": 1,
+      "unitPrice": 999.99
+    },
+    {
+      "productId": 2,
+      "productName": "Mouse",
+      "quantity": 1,
+      "unitPrice": 49.99
+    }
+  ]
+}
+
+### Delete an order by ID
+DELETE https://localhost:7102/api/orders/1

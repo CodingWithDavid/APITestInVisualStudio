@@ -1,0 +1,40 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+### Get all customers
+GET https://localhost:7102/api/customer
+Accept: application/json
+
+### Get a single customer by ID
+GET https://localhost:7102/api/customer/1
+Accept: application/json
+
+### Create a new customer
+POST https://localhost:7102/api/customer
+Content-Type: application/json
+
+{
+  "firstName": "Michael",
+  "lastName": "Scott",
+  "email": "michael.scott@dundermifflin.com",
+  "phoneNumber": "333-444-5555",
+  "address": "Scranton, PA",
+  "dateOfBirth": "1964-03-15T00:00:00",
+  "orders": []
+}
+
+### Update an existing customer
+PUT https://localhost:7102/api/customer/2
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@newemail.com",
+  "phoneNumber": "123-456-7890",
+  "address": "123 Main St, Anytown, USA",
+  "dateOfBirth": "1990-01-01T00:00:00",
+  "orders": []
+}
+
+### Delete a customer by ID
+DELETE https://localhost:7102/api/customer/1
